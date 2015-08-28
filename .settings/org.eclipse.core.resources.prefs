@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/charset/PrefixTest.java=UTF-8
+encoding//src/com/ai/test=UTF-8
+encoding//src/com/ai/test/zk/ZKServerStatusCollector.java=UTF-8
+encoding//src/dfs=UTF-8
+encoding//src/my/ik/IkTest.java=gbk
+encoding//src/owls/CollectReplaceJdom.java=UTF-8
+encoding//src/owls/IndexReplaceJdom.java=UTF-8
+encoding//src/owls/w3c/CollectReplace.java=UTF-8
+encoding/<project>=gbk

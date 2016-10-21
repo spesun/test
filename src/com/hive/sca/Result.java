@@ -9,7 +9,7 @@
 /*     */ import java.util.Map;
 /*     */ import java.util.Map.Entry;
 /*     */ import java.util.Set;
-/*     */ import net.sf.json.JSONObject;
+/*     */ //import net.sf.json.JSONObject;
 /*     */ import org.apache.commons.lang.StringUtils;
 /*     */ 
 /*     */ public class Result
@@ -256,7 +256,7 @@
 /* 410 */     Map othereIF = otherRs.geteIF();
 /*     */     String[] value;
 /* 411 */     if ((othereIF != null) && (!othereIF.isEmpty())) {
-/* 412 */       Set othereIFSet = othereIF.keySet();
+/* 412 */       Set<String> othereIFSet = othereIF.keySet();
 /* 413 */       for (String othereIFKey : othereIFSet) {
 /* 414 */         if ("K1".equals(othereIFKey)) {
 /* 415 */           value = (String[])this.eIF.get("K1");
@@ -271,13 +271,13 @@
 /*     */ 
 /* 425 */     Map otherCR = otherRs.getClassifyResult();
 /* 426 */     if ((otherCR != null) && (!otherCR.isEmpty())) {
-/* 427 */       Set catalogIdSet = otherCR.keySet();
+/* 427 */       Set<String> catalogIdSet = otherCR.keySet();
 /*     */ 
 /* 429 */       for (String catalogId : catalogIdSet)
 /*     */       {
 /* 431 */         if (this.classifyResult.containsKey(catalogId)) {
-/* 432 */           List thisNodeClassifyInfoList = (List)this.classifyResult.get(catalogId);
-/* 433 */           List otherNodeClassifyInfoList = (List)otherCR.get(catalogId);
+/* 432 */           List<NodeClassifyInfo> thisNodeClassifyInfoList = (List)this.classifyResult.get(catalogId);
+/* 433 */           List<NodeClassifyInfo> otherNodeClassifyInfoList = (List)otherCR.get(catalogId);
 /*     */ 
 /* 435 */           for (NodeClassifyInfo otherNodeClassifyInfo : otherNodeClassifyInfoList) {
 /* 436 */             boolean has = false;
@@ -312,7 +312,7 @@
 /*     */ 
 /* 470 */     for (Map.Entry entry : rs.getClassifyResult().entrySet()) {
 /* 471 */       String catalogId = (String)entry.getKey();
-/* 472 */       List classifyInfoList = (List)entry.getValue();
+/* 472 */       List<NodeClassifyInfo> classifyInfoList = (List)entry.getValue();
 /* 473 */       String lable = "";
 /* 474 */       double probability = 0.0D;
 /*     */ 
@@ -397,15 +397,15 @@
 /* 589 */       classifyResult.put(key2, classifyInfos2);
 /* 590 */       result.setClassifyResult(classifyResult);
 /*     */ 
-/* 592 */       JSONObject jsonObj = JSONObject.fromObject(result);
-/* 593 */       System.out.println(jsonObj);
+/* 592 */       //JSONObject jsonObj = JSONObject.fromObject(result);
+/* 593 */       //System.out.println(jsonObj);
 /*     */ 
-/* 595 */       Result rs = Result.convertToResult(jsonObj.toString());
+/* 595 */       Result rs = null;//Result.convertToResult(jsonObj.toString());
 /*     */ 
 /* 597 */       if ((rs != null) && (rs.getClassifyResult() != null))
 /*     */       {
 /* 608 */         for (String catalogId : rs.getClassifyResult().keySet()) {
-/* 609 */           List classifyInfoList = (List)result.getClassifyResult().get(catalogId);
+/* 609 */           List<NodeClassifyInfo> classifyInfoList = (List)result.getClassifyResult().get(catalogId);
 /* 610 */           for (NodeClassifyInfo nodeClassifyInfo : classifyInfoList)
 /* 611 */             System.out.println(catalogId + "\t" + nodeClassifyInfo.getLable());
 /*     */         }

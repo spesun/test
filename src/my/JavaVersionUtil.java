@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 
 public class JavaVersionUtil {
 
- private static final String str = "D:/NewQs/source/qs/build/com/zte/qs/parse/parser/ParserFactory.class";
+ private static final String str = "D:/ParquetRecordReaderWrapper.class";
 
  // ∞Ê±æ∫≈∂‘”¶£∫
  // 5.0

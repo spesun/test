@@ -12,8 +12,10 @@ public class UnicodeTest {
 		System.out.println(unicode2String(unicode));
 
 
-		//  \u后面加上十六进制代码来表示Unicode字符。
+		//  \\u后面加上十六进制代码来表示Unicode字符。
 		//  0x开头,代表的是16进制数,0开头的,代表的是8进制数,可以使用windows自带的计算器看一下(注意调成科学型模式):0x56=86(十进制下),056=46(十进制下).
+		System.out.println(Byte.MAX_VALUE);
+		System.out.println();
 
 	}
 

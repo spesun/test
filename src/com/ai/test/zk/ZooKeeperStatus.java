@@ -6,84 +6,84 @@ import java.util.Map;
 
 
 public class ZooKeeperStatus {
-	
-	private String ip;
-	private List< String > clientConnectionList;
-	//private Map< String,Connection > connections;
-	@SuppressWarnings("unused")
-	private String connectionsContent;
-	/** watch nums */
-	private int watches;
-	private int watchedPaths;
-	private boolean isLeader;
-	private String mode;
-	private long nodeCount;
-	private String statContent;
-	/** 0:ä¸ç¡®å®š 1:OK 2: ERROR*/
-	private int statusType = 0;
 
-	private String sent;
-	private String Received;
-	
-	private Map<String/**session id*/, List<String> /** watched path list */ > watchedPathMap;
-	private String watchedPathMapContent;
+    private String ip;
+    private List< String > clientConnectionList;
+    //private Map< String,Connection > connections;
+    @SuppressWarnings("unused")
+    private String connectionsContent;
+    /** watch nums */
+    private int watches;
+    private int watchedPaths;
+    private boolean isLeader;
+    private String mode;
+    private long nodeCount;
+    private String statContent;
+    /** 0:²»È·¶¨ 1:OK 2: ERROR*/
+    private int statusType = 0;
 
-	
-	public String getIp() {
-		return ip;
-	}
+    private String sent;
+    private String Received;
 
-	public void setIp( String ip ) {
-		this.ip = ip;
-	}
+    private Map<String/**session id*/, List<String> /** watched path list */ > watchedPathMap;
+    private String watchedPathMapContent;
 
-	public boolean isLeader() {
-		return isLeader;
-	}
 
-	public void setLeader( boolean isLeader ) {
-		this.isLeader = isLeader;
-	}
+    public String getIp() {
+        return ip;
+    }
 
-	public String getStatContent() {
-		return statContent;
-	}
+    public void setIp( String ip ) {
+        this.ip = ip;
+    }
 
-	public void setStatContent( String statContent ) {
-		this.statContent = statContent;
-	}
+    public boolean isLeader() {
+        return isLeader;
+    }
 
-	public List< String > getClientConnectionList() {
-		return clientConnectionList;
-	}
+    public void setLeader( boolean isLeader ) {
+        this.isLeader = isLeader;
+    }
 
-	public void setClientConnectionList( List< String > clientConnectionList ) {
-		this.clientConnectionList = clientConnectionList;
-	}
+    public String getStatContent() {
+        return statContent;
+    }
 
-	public long getNodeCount() {
-		return nodeCount;
-	}
+    public void setStatContent( String statContent ) {
+        this.statContent = statContent;
+    }
 
-	public void setNodeCount( long nodeCount ) {
-		this.nodeCount = nodeCount;
-	}
+    public List< String > getClientConnectionList() {
+        return clientConnectionList;
+    }
 
-	public String getMode() {
-		return mode;
-	}
+    public void setClientConnectionList( List< String > clientConnectionList ) {
+        this.clientConnectionList = clientConnectionList;
+    }
 
-	public void setMode( String mode ) {
-		this.mode = mode;
-	}
+    public long getNodeCount() {
+        return nodeCount;
+    }
 
-	public int getWatches() {
-		return watches;
-	}
+    public void setNodeCount( long nodeCount ) {
+        this.nodeCount = nodeCount;
+    }
 
-	public void setWatches( int watches ) {
-		this.watches = watches;
-	}
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode( String mode ) {
+        this.mode = mode;
+    }
+
+    public int getWatches() {
+        return watches;
+    }
+
+    public void setWatches( int watches ) {
+        this.watches = watches;
+    }
 	/*public Map< String,Connection > getConnections() {
 		return connections;
 	}
@@ -92,89 +92,90 @@ public class ZooKeeperStatus {
 		this.connections = connections;
 	}*/
 
-	public int getWatchedPaths() {
-		return watchedPaths;
-	}
+    public int getWatchedPaths() {
+        return watchedPaths;
+    }
 
-	public void setWatchedPaths( int watchedPaths ) {
-		this.watchedPaths = watchedPaths;
-	}
+    public void setWatchedPaths( int watchedPaths ) {
+        this.watchedPaths = watchedPaths;
+    }
 
-	public int getStatusType() {
-		return statusType;
-	}
+    public int getStatusType() {
+        return statusType;
+    }
 
-	public void setStatusType( int statusType ) {
-		this.statusType = statusType;
-	}
-	
-	public Map<String, List<String> > getWatchedPathMap() {
-		return watchedPathMap;
-	}
+    public void setStatusType( int statusType ) {
+        this.statusType = statusType;
+    }
 
-	public void setWatchedPathMap( Map<String, List<String> > watchedPathMap ) {
-		this.watchedPathMap = watchedPathMap;
-	}
+    public Map<String, List<String> > getWatchedPathMap() {
+        return watchedPathMap;
+    }
 
-	public String getWatchedPathMapContent() {
-		return watchedPathMapContent;
-	}
+    public void setWatchedPathMap( Map<String, List<String> > watchedPathMap ) {
+        this.watchedPathMap = watchedPathMap;
+    }
 
-	public void setWatchedPathMapContent( String watchedPathMapContent ) {
-		this.watchedPathMapContent = watchedPathMapContent;
-	}
-	
-	public String getSent() {
-		return sent;
-	}
+    public String getWatchedPathMapContent() {
+        return watchedPathMapContent;
+    }
 
-	public void setSent( String sent ) {
-		this.sent = sent;
-	}
+    public void setWatchedPathMapContent( String watchedPathMapContent ) {
+        this.watchedPathMapContent = watchedPathMapContent;
+    }
 
-	public String getReceived() {
-		return Received;
-	}
+    public String getSent() {
+        return sent;
+    }
 
-	public void setReceived( String received ) {
-		Received = received;
-	}
-	
-	@Override
-	public String toString() {
-		return "ZooKeeperStatus[ip: " + ip + ", isLeader: " + isLeader + ", nodeCount: " + nodeCount + ", "
-				/*+ connections + " ä¸ªå®¢æˆ·ç«¯è¿æ¥"*/ + "åœ¨" + watchedPaths + "ä¸ªpathä¸Šæ³¨å†Œäº†" + watches + "ä¸ªwatch," + clientConnectionList;
-	}
-	
+    public void setSent( String sent ) {
+        this.sent = sent;
+    }
+
+    public String getReceived() {
+        return Received;
+    }
+
+    public void setReceived( String received ) {
+        Received = received;
+    }
+
+    @Override
+    public String toString() {
+        return "ZooKeeperStatus[ip: " + ip + ", isLeader: " + isLeader + ", nodeCount: " + nodeCount + ", "
+				/*+ connections + " ¸ö¿Í»§¶ËÁ¬½Ó"*/ + "ÔÚ" + watchedPaths + "¸öpathÉÏ×¢²áÁË" + watches + "¸öwatch," + clientConnectionList;
+    }
+
 	/*public String getConnectionsContent() {
 		return convertConnsToHtmlContent();
 	}*/
-	
-	/** æŠŠä¸€ä¸ªMap< String,Connection > connections è½¬æ¢æˆhtmlå†…å®¹
-	private String convertConnsToHtmlContent(){
-		if( null == this.connections || connections.isEmpty() )
-			return "No conn on this server!";
-		StringBuffer sb = new StringBuffer();
-		
-//		è¿™é‡Œå¯ä»¥ç»Ÿè®¡è¿æ¥æ•°ä¸ªæ•°
-		
-		
-		for( String sessionId : connections.keySet() ){
-			Connection conn = null;
-			if( StringUtil.isBlank( sessionId ) || null == ( conn = connections.get( sessionId ) ) )
-				continue;
-			sb.append( sessionId ).append( ": " ).append( conn.getClientIp() ).append( ", send to server: " ).append( conn.getReceiveTimes() ).append( ", receive from server: ").append( conn.getSendTimes() ).append( BR );
-		}
-		return sb.toString();
-	} */
 
-	
-	
-	
-	
-	
-	
-	
-	
+    /** °ÑÒ»¸öMap< String,Connection > connections ×ª»»³ÉhtmlÄÚÈİ
+     private String convertConnsToHtmlContent(){
+     if( null == this.connections || connections.isEmpty() )
+     return "No conn on this server!";
+     StringBuffer sb = new StringBuffer();
+
+     //		ÕâÀï¿ÉÒÔÍ³¼ÆÁ¬½ÓÊı¸öÊı
+
+
+     for( String sessionId : connections.keySet() ){
+     Connection conn = null;
+     if( StringUtil.isBlank( sessionId ) || null == ( conn = connections.get( sessionId ) ) )
+     continue;
+     sb.append( sessionId ).append( ": " ).append( conn.getClientIp() ).append( ", send to server: " ).append( conn.getReceiveTimes() ).append( ", receive from server: ").append( conn.getSendTimes() ).append( BR );
+     }
+     return sb.toString();
+     } */
+
+
+
+
+
+
+
+
+
 
 }
+

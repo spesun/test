@@ -200,7 +200,7 @@ public class ZKServerStatusCollector implements Runnable {
             int watches = Integer.parseInt( StringUtil.trimToEmpty( secondtLine ) );
             zooKeeperStatus.setWatches( watches );
         } catch ( Exception e ) {
-            LOG.error( "程序出错：" + e.getMessage() );
+            LOG.error( "",  e.getMessage() );
         }
     }
 
